@@ -1,0 +1,21 @@
+﻿@model АспЛекция3.Models.User
+
+@{
+    ViewData["Title"] = "Удаление пользователя";
+}
+
+<h2 class="text-danger">@ViewData["Title"]</h2>
+
+<div class="alert alert-warning">
+    <h4>Вы уверены, что хотите удалить этого пользователя?</h4>
+    <p>
+        <strong>@Model.LastName @Model.FirstName</strong><br />
+        Логин: @Model.Login
+    </p>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="IdUser" />
+    <button type="submit" class="btn btn-danger">Да, удалить</button>
+    <a asp-action="Index" class="btn btn-secondary">Отмена</a>
+</form>

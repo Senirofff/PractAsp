@@ -1,0 +1,41 @@
+﻿@model IEnumerable<АспЛекция3.Models.Category>
+
+<h2>Категории товаров</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">
+        <i class="fas fa-plus"></i> Добавить категорию
+    </a>
+</p>
+
+<table class="table table-bordered table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Название категории</th>
+            <th>Действия</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.IdCategory</td>
+                <td>@item.Name</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdCategory" class="btn btn-sm btn-primary">
+                        <i class="fas fa-edit"></i> Изменить
+                    </a>
+                    <a asp-action="Delete" asp-route-id="@item.IdCategory" class="btn btn-sm btn-danger">
+                        <i class="fas fa-trash"></i> Удалить
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (!Model.Any())
+{
+    <p class="text-muted">Категорий пока нет</p>
+}

@@ -1,0 +1,2 @@
+﻿ALTER TABLE Products ADD ImageFileName NVARCHAR(255) NULL;
+SELECT*FROM Products

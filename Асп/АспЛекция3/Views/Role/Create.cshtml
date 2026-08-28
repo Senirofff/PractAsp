@@ -1,0 +1,14 @@
+﻿@model АспЛекция3.Models.Role
+
+<h2>Добавить новую роль</h2>
+
+<form asp-action="Create">
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label"></label>
+        <input asp-for="Title" class="form-control" required maxlength="40" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Добавить роль</button>
+    <a asp-action="Index" class="btn btn-secondary">Отмена</a>
+</form>

@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Доступ запрещён";
+}
+
+<div class="text-center mt-5">
+    <h1 class="text-danger">⛔ Доступ запрещён</h1>
+    <p class="lead">У вас недостаточно прав для просмотра этой страницы.</p>
+    <div class="mt-4">
+        <a asp-controller="Product" asp-action="Index" class="btn btn-primary">Вернуться к товарам</a>
+        <form asp-controller="Auth" asp-action="Logout" method="post" class="d-inline ms-2">
+            @Html.AntiForgeryToken()
+            <button type="submit" class="btn btn-outline-secondary">Выйти</button>
+        </form>
+    </div>
+</div>

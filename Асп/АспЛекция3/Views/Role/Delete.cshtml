@@ -1,0 +1,15 @@
+﻿@model АспЛекция3.Models.Role
+
+<h2 class="text-danger">Удаление роли</h2>
+
+<div class="alert alert-warning">
+    <h4>Вы уверены, что хотите удалить эту роль?</h4>
+    <p><strong>@Model.Title</strong></p>
+    <small class="text-muted">ID: @Model.IdRole</small>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="IdRole" />
+    <button type="submit" class="btn btn-danger">Да, удалить</button>
+    <a asp-action="Index" class="btn btn-secondary">Отмена</a>
+</form>

@@ -1,0 +1,93 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Denis\\source\\repos\\\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A1C8F74C-20F6-473C-8748-A8B5B455B60A}|\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3.csproj|c:\\users\\denis\\source\\repos\\\u0430\u0441\u043F\u043B\u0435\u043A\u0446\u0438\u044F3\\\u0430\u0441\u043F\u043B\u0435\u043A\u0446\u0438\u044F3\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1C8F74C-20F6-473C-8748-A8B5B455B60A}|\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3.csproj|solutionrelative:\u0430\u0441\u043F\u043B\u0435\u043A\u0446\u0438\u044F3\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1C8F74C-20F6-473C-8748-A8B5B455B60A}|\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3.csproj|c:\\users\\denis\\source\\repos\\\u0430\u0441\u043F\u043B\u0435\u043A\u0446\u0438\u044F3\\\u0430\u0441\u043F\u043B\u0435\u043A\u0446\u0438\u044F3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1C8F74C-20F6-473C-8748-A8B5B455B60A}|\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3.csproj|solutionrelative:\u0430\u0441\u043F\u043B\u0435\u043A\u0446\u0438\u044F3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1C8F74C-20F6-473C-8748-A8B5B455B60A}|\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3.csproj|c:\\users\\denis\\source\\repos\\\u0430\u0441\u043F\u043B\u0435\u043A\u0446\u0438\u044F3\\\u0430\u0441\u043F\u043B\u0435\u043A\u0446\u0438\u044F3\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A1C8F74C-20F6-473C-8748-A8B5B455B60A}|\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3.csproj|solutionrelative:\u0430\u0441\u043F\u043B\u0435\u043A\u0446\u0438\u044F3\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1C8F74C-20F6-473C-8748-A8B5B455B60A}|\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3.csproj|c:\\users\\denis\\source\\repos\\\u0430\u0441\u043F\u043B\u0435\u043A\u0446\u0438\u044F3\\\u0430\u0441\u043F\u043B\u0435\u043A\u0446\u0438\u044F3\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1C8F74C-20F6-473C-8748-A8B5B455B60A}|\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3.csproj|solutionrelative:\u0430\u0441\u043F\u043B\u0435\u043A\u0446\u0438\u044F3\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Denis\\source\\repos\\\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\Views\\Product\\Index.cshtml",
+              "RelativeDocumentMoniker": "\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\Views\\Product\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Denis\\source\\repos\\\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\Views\\Product\\Index.cshtml",
+              "RelativeToolTip": "\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\Views\\Product\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-01T21:06:44.577Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "C:\\Users\\Denis\\source\\repos\\\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\Controllers\\CategoryController.cs",
+              "ToolTip": "C:\\Users\\Denis\\source\\repos\\\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\Controllers\\CategoryController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-01T21:00:42.53Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\Denis\\source\\repos\\\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\Denis\\source\\repos\\\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwEIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-01T20:54:18.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Denis\\source\\repos\\\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\Program.cs",
+              "RelativeDocumentMoniker": "\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\Program.cs",
+              "ToolTip": "C:\\Users\\Denis\\source\\repos\\\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\Program.cs",
+              "RelativeToolTip": "\u0410\u0441\u043F\u041B\u0435\u043A\u0446\u0438\u044F3\\Program.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwAsAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-01T20:52:54.492Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

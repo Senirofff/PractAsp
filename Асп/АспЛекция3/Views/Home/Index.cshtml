@@ -1,0 +1,54 @@
+﻿@model dynamic
+@{
+    ViewData["Title"] = "Главная панель";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="mb-4">Добро пожаловать в административную панель</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="card text-white bg-primary mb-3">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-boxes"></i> Товары</h5>
+                <h2 class="card-text">@Model.TotalProducts</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-tags"></i> Категории</h5>
+                <h2 class="card-text">@Model.TotalCategories</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-info mb-3">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-users"></i> Пользователи</h5>
+                <h2 class="card-text">@Model.TotalUsers</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-warning mb-3">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-shopping-bag"></i> Заказы</h5>
+                <h2 class="card-text">@Model.TotalOrders</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a asp-controller="Product" asp-action="Index" class="btn btn-primary btn-lg me-3">
+        <i class="fas fa-boxes"></i> Управление товарами
+    </a>
+    <a asp-controller="Category" asp-action="Index" class="btn btn-secondary btn-lg">
+        <i class="fas fa-tags"></i> Управление категориями
+    </a>
+</div>

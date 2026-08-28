@@ -1,0 +1,19 @@
+﻿@model АспЛекция3.Models.Order
+
+<h2 class="text-danger">Удаление заказа</h2>
+
+<div class="alert alert-warning">
+    <h4>Вы уверены, что хотите удалить заказ №@Model.IdOrder?</h4>
+    <p>
+        Дата: <strong>@Model.OrderDate.ToString("dd.MM.yyyy HH:mm")</strong><br />
+        Сумма: <strong>@Model.TotalAmount.ToString("N2") руб.</strong><br />
+        Статус: <strong>@Model.Status</strong>
+    </p>
+    <small class="text-danger">Вместе с заказом будут удалены все его позиции.</small>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="IdOrder" />
+    <button type="submit" class="btn btn-danger">Да, удалить заказ</button>
+    <a asp-action="Index" class="btn btn-secondary">Отмена</a>
+</form>

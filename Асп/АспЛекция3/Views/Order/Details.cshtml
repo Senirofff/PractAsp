@@ -1,0 +1,52 @@
+﻿@model АспЛекция3.Models.Order
+
+@{
+    var orderItems = ViewBag.OrderItems as List<АспЛекция3.Models.OrderItem> ?? new();
+    var products = ViewBag.Products as List<АспЛекция3.Models.Product> ?? new();
+}
+
+<h2>Заказ №@Model.IdOrder</h2>
+
+<div class="row mb-4">
+    <div class="col-md-6">
+        <dl class="row">
+            <dt class="col-sm-5">Дата:</dt>
+            <dd class="col-sm-7">@Model.OrderDate.ToString("dd.MM.yyyy HH:mm")</dd>
+            <dt class="col-sm-5">Пользователь ID:</dt>
+            <dd class="col-sm-7">@Model.IdUser</dd>
+            <dt class="col-sm-5">Статус:</dt>
+            <dd class="col-sm-7">@Model.Status</dd>
+            <dt class="col-sm-5">Сумма:</dt>
+            <dd class="col-sm-7"><strong>@Model.TotalAmount.ToString("N2") руб.</strong></dd>
+            <dt class="col-sm-5">Адрес:</dt>
+            <dd class="col-sm-7">@(Model.DeliveryAddress ?? "-")</dd>
+        </dl>
+    </div>
+</div>
+
+<h4>Товары в заказе</h4>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Товар</th>
+            <th>Кол-во</th>
+            <th>Цена</th>
+            <th>Сумма</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in orderItems)
+        {
+            var prod = products.FirstOrDefault(p => p.IdProduct == item.IdProduct);
+            <tr>
+                <td>@(prod?.Name ?? $"ID {item.IdProduct}")</td>
+                <td>@item.Quantity</td>
+                <td>@item.Price.ToString("N2") руб.</td>
+                <td><strong>@((item.Price * item.Quantity).ToString("N2")) руб.</strong></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Index" class="btn btn-secondary">← Назад к заказам</a>

@@ -1,0 +1,19 @@
+﻿@model АспЛекция3.Models.Product
+
+<h2 class="text-danger">Удаление товара</h2>
+
+<div class="alert alert-warning">
+    <h4>Вы действительно хотите удалить этот товар?</h4>
+    <p>
+        <strong>@Model.Name</strong><br />
+        Цена: <strong>@Model.Price.ToString("N2") руб.</strong><br />
+        Категория ID: @Model.IdCategory
+    </p>
+    <small class="text-muted">Это действие нельзя будет отменить.</small>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="IdProduct" />
+    <button type="submit" class="btn btn-danger">Да, удалить товар</button>
+    <a asp-action="Index" class="btn btn-secondary">Отмена</a>
+</form>

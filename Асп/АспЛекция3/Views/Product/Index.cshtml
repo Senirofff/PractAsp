@@ -1,0 +1,242 @@
+﻿@model IEnumerable<АспЛекция3.Models.Product>
+@{
+    ViewData["Title"] = "Каталог товаров";
+    var categories = ViewBag.Categories as List<АспЛекция3.Models.Category>;
+    int currentPage = ViewBag.CurrentPage ?? 1;
+    int totalPages = ViewBag.TotalPages ?? 1;
+    string currentSearch = ViewData["CurrentSearch"] as string ?? "";
+    int? currentCategory = ViewData["CurrentCategory"] as int?;
+    string currentSort = ViewData["CurrentSort"] as string ?? "";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2><i class="fas fa-pills me-2"></i>Каталог товаров</h2>
+
+    @if (ViewData["DataSourceInfo"] != null)
+    {
+        <div class="alert @ViewData["DataSourceClass"] alert-dismissible fade show" role="alert">
+            <i class="fas fa-info-circle me-2"></i> @ViewData["DataSourceInfo"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    
+    @if (User.IsInRole("Администратор"))
+    {
+        <a asp-action="Create" class="btn btn-success">
+            <i class="fas fa-plus me-1"></i> Добавить товар
+        </a>
+    }
+</div>
+
+<form method="get" asp-action="Index" class="card p-3 mb-4 shadow-sm">
+    <div class="row g-3">
+        <div class="col-md-4">
+            <label class="form-label">Поиск</label>
+            <input type="text" name="search" class="form-control" 
+                   placeholder="Название товара..." value="@currentSearch" />
+        </div>
+
+        <div class="col-md-3">
+            <label class="form-label">Категория</label>
+            <select name="categoryId" class="form-select">
+                <option value="">Все категории</option>
+                @foreach (var cat in categories ?? new())
+                {
+                    @if (currentCategory.HasValue && currentCategory.Value == cat.IdCategory)
+                    {
+                        <option value="@cat.IdCategory" selected>@cat.Name</option>
+                    }
+                    else
+                    {
+                        <option value="@cat.IdCategory">@cat.Name</option>
+                    }
+                }
+            </select>
+        </div>
+
+        <div class="col-md-3">
+            <label class="form-label">Cортировка</label>
+            <select name="sortBy" class="form-select" onchange="this.form.submit()">
+                @if (currentSort == "name_asc")
+                {
+                    <option value="name_asc" selected>По названию (А-Я)</option>
+                }
+                else
+                {
+                    <option value="name_asc">По названию (А-Я)</option>
+                }
+
+                @if (currentSort == "name_desc")
+                {
+                    <option value="name_desc" selected>По названию (Я-А)</option>
+                }
+                else
+                {
+                    <option value="name_desc">По названию (Я-А)</option>
+                }
+
+                @if (currentSort == "price_asc")
+                {
+                    <option value="price_asc" selected>По цене (возр.)</option>
+                }
+                else
+                {
+                    <option value="price_asc">По цене (возр.)</option>
+                }
+
+                @if (currentSort == "price_desc")
+                {
+                    <option value="price_desc" selected>По цене (убыв.)</option>
+                }
+                else
+                {
+                    <option value="price_desc">По цене (убыв.)</option>
+                }
+            </select>
+        </div>
+
+        <div class="col-md-2 d-flex align-items-end gap-2">
+            <button type="submit" class="btn btn-primary w-100">Применить</button>
+            <a asp-action="Index" class="btn btn-outline-secondary">✕</a>
+        </div>
+    </div>
+</form>
+
+@if (Model?.Any() == true)
+{
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        @foreach (var p in Model)
+        {
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+
+                    <div class="bg-light d-flex align-items-center justify-content-center"
+                         style="height: 200px; overflow: hidden; border-bottom: 1px solid #ffffff;">
+                        @{
+                            var imagePath = $"/products/{p.IdProduct}.jpg";
+                            var imagePathPng = $"/products/{p.IdProduct}.png";
+                        }
+
+                        <img src="@imagePath"
+                             alt="@p.Name"
+                             style="max-width: 100%; max-height: 100%; object-fit: contain;"
+                             onerror="if(this.src.endsWith('.jpg')){this.src='@imagePathPng';}else{this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-pills fa-4x text-secondary opacity-50\'></i>';}" />
+                    </div>
+                    
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-dark">@p.Name</h5>
+                        
+                        @if (categories != null)
+                        {
+                            var cat = categories.FirstOrDefault(c => c.IdCategory == p.IdCategory);
+                            if (cat != null)
+                            {
+                                <span class="badge bg-secondary mb-2" style="background-color: #6c757d !important;">@cat.Name</span>
+                            }
+                        }
+                        
+                        <p class="card-text text-muted small flex-grow-1">
+                            @(p.Discription?.Length > 100 ? p.Discription.Substring(0, 100) + "..." : p.Discription)
+                        </p>
+                        
+                        <div class="mt-auto">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="h5 mb-0 text-primary fw-bold">@p.Price.ToString("0.00") ₽</span>
+                                @if (p.RequiresPrescription)
+                                {
+                                    <span class="badge bg-warning text-dark">Рецепт</span>
+                                }
+                            </div>
+                            
+                            <form asp-action="AddToCart" method="post">
+                                <input type="hidden" name="id" value="@p.IdProduct" />
+                                <button type="submit" class="btn btn-success w-100">
+                                    <i class="fas fa-cart-plus me-1"></i> В корзину
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    @if (User.IsInRole("Администратор"))
+                    {
+                        <div class="card-footer bg-white border-top">
+                            <div class="d-flex gap-2">
+                                <a asp-action="Edit" asp-route-id="@p.IdProduct" class="btn btn-sm btn-primary flex-grow-1">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <a asp-action="Delete" asp-route-id="@p.IdProduct" class="btn btn-sm btn-danger flex-grow-1">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+
+    @if (totalPages > 1)
+    {
+        <nav class="mt-4">
+            <ul class="pagination justify-content-center">
+                <li class="page-item @(currentPage == 1 ? "disabled" : "")">
+                    <a class="page-link" asp-action="Index" 
+                       asp-route-search="@currentSearch"
+                       asp-route-categoryId="@currentCategory"
+                       asp-route-sortBy="@currentSort"
+                       asp-route-page="1">«</a>
+                </li>
+                <li class="page-item @(currentPage == 1 ? "disabled" : "")">
+                    <a class="page-link" asp-action="Index"
+                       asp-route-search="@currentSearch"
+                       asp-route-categoryId="@currentCategory"
+                       asp-route-sortBy="@currentSort"
+                       asp-route-page="@(currentPage - 1)">‹</a>
+                </li>
+                
+                @for (int i = 1; i <= totalPages; i++)
+                {
+                    if (i == 1 || i == totalPages || (i >= currentPage - 2 && i <= currentPage + 2))
+                    {
+                        <li class="page-item @(i == currentPage ? "active" : "")">
+                            <a class="page-link" asp-action="Index"
+                               asp-route-search="@currentSearch"
+                               asp-route-categoryId="@currentCategory"
+                               asp-route-sortBy="@currentSort"
+                               asp-route-page="@i">@i</a>
+                        </li>
+                    }
+                    else if (i == currentPage - 3 || i == currentPage + 3)
+                    {
+                        <li class="page-item disabled"><span class="page-link">...</span></li>
+                    }
+                }
+                
+                <li class="page-item @(currentPage == totalPages ? "disabled" : "")">
+                    <a class="page-link" asp-action="Index"
+                       asp-route-search="@currentSearch"
+                       asp-route-categoryId="@currentCategory"
+                       asp-route-sortBy="@currentSort"
+                       asp-route-page="@(currentPage + 1)">›</a>
+                </li>
+                <li class="page-item @(currentPage == totalPages ? "disabled" : "")">
+                    <a class="page-link" asp-action="Index"
+                       asp-route-search="@currentSearch"
+                       asp-route-categoryId="@currentCategory"
+                       asp-route-sortBy="@currentSort"
+                       asp-route-page="@totalPages">»</a>
+                </li>
+            </ul>
+        </nav>
+    }
+}
+else
+{
+    <div class="text-center py-5">
+        <i class="fas fa-search fa-3x text-muted mb-3"></i>
+        <p class="text-muted">Товары не найдены. Попробуйте изменить параметры поиска.</p>
+        <a asp-action="Index" class="btn btn-outline-primary">Сбросить фильтры</a>
+    </div>
+
+
+}
