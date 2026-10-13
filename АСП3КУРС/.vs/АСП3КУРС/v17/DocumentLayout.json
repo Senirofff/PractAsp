@@ -1,20 +1,40 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Denis\\source\\repos\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\",
+  "WorkspaceRootPath": "C:\\Users\\Denis\\Desktop\\ycheba\\\u0410SP(\u041E\u0441\u0438\u043F\u044F\u043D)\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FE02BE5D-B859-410A-B080-72797708A853}|\u0410\u0421\u041F3\u043A\u0443\u0440\u0441\\\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.csproj|c:\\users\\denis\\source\\repos\\\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE02BE5D-B859-410A-B080-72797708A853}|\u0410\u0421\u041F3\u043A\u0443\u0440\u0441\\\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.csproj|solutionrelative:\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FE02BE5D-B859-410A-B080-72797708A853}|\u0410\u0421\u041F3\u043A\u0443\u0440\u0441\\\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.csproj|c:\\users\\denis\\desktop\\ycheba\\\u0430sp(\u043E\u0441\u0438\u043F\u044F\u043D)\\\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE02BE5D-B859-410A-B080-72797708A853}|\u0410\u0421\u041F3\u043A\u0443\u0440\u0441\\\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.csproj|solutionrelative:\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FE02BE5D-B859-410A-B080-72797708A853}|\u0410\u0421\u041F3\u043A\u0443\u0440\u0441\\\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.csproj|c:\\users\\denis\\source\\repos\\\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE02BE5D-B859-410A-B080-72797708A853}|\u0410\u0421\u041F3\u043A\u0443\u0440\u0441\\\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.csproj|solutionrelative:\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FE02BE5D-B859-410A-B080-72797708A853}|\u0410\u0421\u041F3\u043A\u0443\u0440\u0441\\\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.csproj|c:\\users\\denis\\desktop\\ycheba\\\u0430sp(\u043E\u0441\u0438\u043F\u044F\u043D)\\\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE02BE5D-B859-410A-B080-72797708A853}|\u0410\u0421\u041F3\u043A\u0443\u0440\u0441\\\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.csproj|solutionrelative:\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Denis\\AppData\\Local\\Temp\\ksrlxl0l..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FE02BE5D-B859-410A-B080-72797708A853}|\u0410\u0421\u041F3\u043A\u0443\u0440\u0441\\\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.csproj|c:\\users\\denis\\source\\repos\\\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FE02BE5D-B859-410A-B080-72797708A853}|\u0410\u0421\u041F3\u043A\u0443\u0440\u0441\\\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.csproj|c:\\users\\denis\\desktop\\ycheba\\\u0430sp(\u043E\u0441\u0438\u043F\u044F\u043D)\\\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE02BE5D-B859-410A-B080-72797708A853}|\u0410\u0421\u041F3\u043A\u0443\u0440\u0441\\\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.csproj|solutionrelative:\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE02BE5D-B859-410A-B080-72797708A853}|\u0410\u0421\u041F3\u043A\u0443\u0440\u0441\\\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.csproj|c:\\users\\denis\\desktop\\ycheba\\\u0430sp(\u043E\u0441\u0438\u043F\u044F\u043D)\\\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\models\\onlinepharmacyp824context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE02BE5D-B859-410A-B080-72797708A853}|\u0410\u0421\u041F3\u043A\u0443\u0440\u0441\\\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.csproj|solutionrelative:\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\models\\onlinepharmacyp824context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE02BE5D-B859-410A-B080-72797708A853}|\u0410\u0421\u041F3\u043A\u0443\u0440\u0441\\\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.csproj|c:\\users\\denis\\desktop\\ycheba\\\u0430sp(\u043E\u0441\u0438\u043F\u044F\u043D)\\\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FE02BE5D-B859-410A-B080-72797708A853}|\u0410\u0421\u041F3\u043A\u0443\u0440\u0441\\\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.csproj|solutionrelative:\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE02BE5D-B859-410A-B080-72797708A853}|\u0410\u0421\u041F3\u043A\u0443\u0440\u0441\\\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.csproj|c:\\users\\denis\\desktop\\ycheba\\\u0430sp(\u043E\u0441\u0438\u043F\u044F\u043D)\\\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FE02BE5D-B859-410A-B080-72797708A853}|\u0410\u0421\u041F3\u043A\u0443\u0440\u0441\\\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.csproj|solutionrelative:\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE02BE5D-B859-410A-B080-72797708A853}|\u0410\u0421\u041F3\u043A\u0443\u0440\u0441\\\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.csproj|c:\\users\\denis\\desktop\\ycheba\\\u0430sp(\u043E\u0441\u0438\u043F\u044F\u043D)\\\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FE02BE5D-B859-410A-B080-72797708A853}|\u0410\u0421\u041F3\u043A\u0443\u0440\u0441\\\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.csproj|solutionrelative:\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE02BE5D-B859-410A-B080-72797708A853}|\u0410\u0421\u041F3\u043A\u0443\u0440\u0441\\\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.csproj|c:\\users\\denis\\desktop\\ycheba\\\u0430sp(\u043E\u0441\u0438\u043F\u044F\u043D)\\\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FE02BE5D-B859-410A-B080-72797708A853}|\u0410\u0421\u041F3\u043A\u0443\u0440\u0441\\\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.csproj|solutionrelative:\u0430\u0441\u043F3\u043A\u0443\u0440\u0441\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -25,23 +45,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "Cart.cs",
-              "DocumentMoniker": "C:\\Users\\Denis\\source\\repos\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Models\\Cart.cs",
+              "DocumentMoniker": "C:\\Users\\Denis\\Desktop\\ycheba\\\u0410SP(\u041E\u0441\u0438\u043F\u044F\u043D)\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Models\\Cart.cs",
               "RelativeDocumentMoniker": "\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Models\\Cart.cs",
-              "ToolTip": "C:\\Users\\Denis\\source\\repos\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Models\\Cart.cs",
+              "ToolTip": "C:\\Users\\Denis\\Desktop\\ycheba\\\u0410SP(\u041E\u0441\u0438\u043F\u044F\u043D)\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Models\\Cart.cs",
               "RelativeToolTip": "\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Models\\Cart.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -51,39 +63,106 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Denis\\source\\repos\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Program.cs",
-              "RelativeDocumentMoniker": "\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Program.cs",
-              "ToolTip": "C:\\Users\\Denis\\source\\repos\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Program.cs",
-              "RelativeToolTip": "\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Program.cs",
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\Denis\\Desktop\\ycheba\\\u0410SP(\u041E\u0441\u0438\u043F\u044F\u043D)\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\Denis\\Desktop\\ycheba\\\u0410SP(\u041E\u0441\u0438\u043F\u044F\u043D)\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Models\\Product.cs",
+              "RelativeToolTip": "\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Models\\Product.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-18T05:41:44.67Z",
+              "WhenOpened": "2026-09-18T18:37:15.628Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OnlinePharmacyP824Context.cs",
+              "DocumentMoniker": "C:\\Users\\Denis\\Desktop\\ycheba\\\u0410SP(\u041E\u0441\u0438\u043F\u044F\u043D)\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Models\\OnlinePharmacyP824Context.cs",
+              "RelativeDocumentMoniker": "\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Models\\OnlinePharmacyP824Context.cs",
+              "ToolTip": "C:\\Users\\Denis\\Desktop\\ycheba\\\u0410SP(\u041E\u0441\u0438\u043F\u044F\u043D)\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Models\\OnlinePharmacyP824Context.cs",
+              "RelativeToolTip": "\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Models\\OnlinePharmacyP824Context.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-18T18:35:46.033Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Denis\\Desktop\\ycheba\\\u0410SP(\u041E\u0441\u0438\u043F\u044F\u043D)\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Denis\\Desktop\\ycheba\\\u0410SP(\u041E\u0441\u0438\u043F\u044F\u043D)\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Properties\\launchSettings.json",
+              "RelativeToolTip": "\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-09-18T18:35:34.016Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Denis\\Desktop\\ycheba\\\u0410SP(\u041E\u0441\u0438\u043F\u044F\u043D)\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\appsettings.json",
+              "RelativeDocumentMoniker": "\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\appsettings.json",
+              "ToolTip": "C:\\Users\\Denis\\Desktop\\ycheba\\\u0410SP(\u041E\u0441\u0438\u043F\u044F\u043D)\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\appsettings.json",
+              "RelativeToolTip": "\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-09-18T18:33:28.71Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\Denis\\Desktop\\ycheba\\\u0410SP(\u041E\u0441\u0438\u043F\u044F\u043D)\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\Denis\\Desktop\\ycheba\\\u0410SP(\u041E\u0441\u0438\u043F\u044F\u043D)\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\appsettings.Development.json",
+              "RelativeToolTip": "\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-09-18T18:33:24.489Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Denis\\Desktop\\ycheba\\\u0410SP(\u041E\u0441\u0438\u043F\u044F\u043D)\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Program.cs",
+              "RelativeDocumentMoniker": "\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Program.cs",
+              "ToolTip": "C:\\Users\\Denis\\Desktop\\ycheba\\\u0410SP(\u041E\u0441\u0438\u043F\u044F\u043D)\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Program.cs",
+              "RelativeToolTip": "\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-18T05:41:44.67Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "ksrlxl0l..sql",
               "DocumentMoniker": "C:\\Users\\Denis\\AppData\\Local\\Temp\\ksrlxl0l..sql",
-              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\ksrlxl0l..sql",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\Temp\\ksrlxl0l..sql",
               "ToolTip": "C:\\Users\\Denis\\AppData\\Local\\Temp\\ksrlxl0l..sql",
-              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\ksrlxl0l..sql",
+              "RelativeToolTip": "..\\..\\..\\..\\AppData\\Local\\Temp\\ksrlxl0l..sql",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
               "WhenOpened": "2026-09-14T13:22:35.022Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "ProductsController.cs",
-              "DocumentMoniker": "C:\\Users\\Denis\\source\\repos\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Controllers\\ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\Denis\\Desktop\\ycheba\\\u0410SP(\u041E\u0441\u0438\u043F\u044F\u043D)\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Controllers\\ProductsController.cs",
               "RelativeDocumentMoniker": "\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Controllers\\ProductsController.cs",
-              "ToolTip": "C:\\Users\\Denis\\source\\repos\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\Denis\\Desktop\\ycheba\\\u0410SP(\u041E\u0441\u0438\u043F\u044F\u043D)\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Controllers\\ProductsController.cs",
               "RelativeToolTip": "\u0410\u0421\u041F3\u041A\u0423\u0420\u0421\\Controllers\\ProductsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAIUAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-14T13:02:27.175Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-14T13:02:27.175Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             }
           ]
         }

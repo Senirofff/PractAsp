@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using АСП3курс.DTOs;
-using АСП3курс.Models;
+using АСП3курс.Services;
 
 namespace АСП3курс.Controllers;
 
@@ -9,85 +8,47 @@ namespace АСП3курс.Controllers;
 [ApiController]
 public class RolesController : ControllerBase
 {
-    private readonly OnlinePharmacyP824Context _context;
+    private readonly IRoleService _service;
 
-    public RolesController(OnlinePharmacyP824Context context)
+    public RolesController(IRoleService service)
     {
-        _context = context;
+        _service = service;
     }
-
-    private static RoleDto ToDto(Role role) => new()
-    {
-        IdRole = role.IdRole,
-        Title = role.Title
-    };
 
     [HttpGet]
     public async Task<ActionResult<IEnumerable<RoleDto>>> GetAll(
         [FromQuery] int page = 1,
-        [FromQuery] int pageSize = 10)
+        [FromQuery] int pageSize = 10,
+        CancellationToken ct = default)
     {
-        var list = await _context.Roles
-            .OrderBy(r => r.IdRole)
-            .Skip((page - 1) * pageSize)
-            .Take(pageSize)
-            .Select(r => ToDto(r))
-            .ToListAsync();
-
-        return Ok(list);
+        var result = await _service.GetAllAsync(page, pageSize, ct);
+        Response.Headers["X-Total-Count"] = result.TotalCount.ToString();
+        return Ok(result.Items);
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<RoleDto>> GetById(int id)
+    public async Task<ActionResult<RoleDto>> GetById(int id, CancellationToken ct = default)
     {
-        var role = await _context.Roles.FindAsync(id);
-        if (role is null) return NotFound();
-        return Ok(ToDto(role));
+        var dto = await _service.GetByIdAsync(id, ct);
+        return dto is null ? NotFound() : Ok(dto);
     }
 
     [HttpPost]
-    public async Task<ActionResult<RoleDto>> Create([FromBody] CreateRoleDto dto)
+    public async Task<ActionResult<RoleDto>> Create([FromBody] CreateRoleDto dto, CancellationToken ct = default)
     {
-        var role = new Role { Title = dto.Title };
-
-        _context.Roles.Add(role);
-        await _context.SaveChangesAsync();
-
-        return CreatedAtAction(nameof(GetById), new { id = role.IdRole }, ToDto(role));
+        var created = await _service.CreateAsync(dto, ct);
+        return CreatedAtAction(nameof(GetById), new { id = created.IdRole }, created);
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, [FromBody] UpdateRoleDto dto)
-    {
-        var role = await _context.Roles.FindAsync(id);
-        if (role is null) return NotFound();
-
-        role.Title = dto.Title;
-        await _context.SaveChangesAsync();
-        return NoContent();
-    }
+    public async Task<IActionResult> Update(int id, [FromBody] UpdateRoleDto dto, CancellationToken ct = default)
+        => await _service.UpdateAsync(id, dto, ct) ? NoContent() : NotFound();
 
     [HttpPatch("{id}")]
-    public async Task<IActionResult> Patch(int id, [FromBody] PatchRoleDto dto)
-    {
-        var role = await _context.Roles.FindAsync(id);
-        if (role is null) return NotFound();
-
-        if (dto.Title is not null)
-            role.Title = dto.Title;
-
-        await _context.SaveChangesAsync();
-        return NoContent();
-    }
+    public async Task<IActionResult> Patch(int id, [FromBody] PatchRoleDto dto, CancellationToken ct = default)
+        => await _service.PatchAsync(id, dto, ct) ? NoContent() : NotFound();
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(int id)
-    {
-        var role = await _context.Roles.FindAsync(id);
-        if (role is null) return NotFound();
-
-        _context.Roles.Remove(role);
-        await _context.SaveChangesAsync();
-        return NoContent();
-    }
+    public async Task<IActionResult> Delete(int id, CancellationToken ct = default)
+        => await _service.DeleteAsync(id, ct) ? NoContent() : NotFound();
 }

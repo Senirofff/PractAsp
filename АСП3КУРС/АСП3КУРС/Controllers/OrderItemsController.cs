@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using АСП3курс.DTOs;
-using АСП3курс.Models;
+using АСП3курс.Services;
 
 namespace АСП3курс.Controllers;
 
@@ -9,107 +8,47 @@ namespace АСП3курс.Controllers;
 [ApiController]
 public class OrderItemsController : ControllerBase
 {
-    private readonly OnlinePharmacyP824Context _context;
+    private readonly IOrderItemService _service;
 
-    public OrderItemsController(OnlinePharmacyP824Context context)
+    public OrderItemsController(IOrderItemService service)
     {
-        _context = context;
+        _service = service;
     }
-
-    private static OrderItemDto ToDto(OrderItem item) => new()
-    {
-        IdOrderItem = item.IdOrderItem,
-        IdOrder = item.IdOrder,
-        IdProduct = item.IdProduct,
-        Quantity = item.Quantity,
-        Price = item.Price
-    };
 
     [HttpGet]
     public async Task<ActionResult<IEnumerable<OrderItemDto>>> GetAll(
         [FromQuery] int page = 1,
-        [FromQuery] int pageSize = 10)
+        [FromQuery] int pageSize = 10,
+        CancellationToken ct = default)
     {
-        var list = await _context.OrderItems
-            .OrderBy(oi => oi.IdOrderItem)
-            .Skip((page - 1) * pageSize)
-            .Take(pageSize)
-            .Select(oi => ToDto(oi))
-            .ToListAsync();
-
-        return Ok(list);
+        var result = await _service.GetAllAsync(page, pageSize, ct);
+        Response.Headers["X-Total-Count"] = result.TotalCount.ToString();
+        return Ok(result.Items);
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<OrderItemDto>> GetById(int id)
+    public async Task<ActionResult<OrderItemDto>> GetById(int id, CancellationToken ct = default)
     {
-        var item = await _context.OrderItems.FindAsync(id);
-        if (item is null) return NotFound();
-        return Ok(ToDto(item));
+        var dto = await _service.GetByIdAsync(id, ct);
+        return dto is null ? NotFound() : Ok(dto);
     }
 
     [HttpPost]
-    public async Task<ActionResult<OrderItemDto>> Create([FromBody] CreateOrderItemDto dto)
+    public async Task<ActionResult<OrderItemDto>> Create([FromBody] CreateOrderItemDto dto, CancellationToken ct = default)
     {
-        var item = new OrderItem
-        {
-            IdOrder = dto.IdOrder,
-            IdProduct = dto.IdProduct,
-            Quantity = dto.Quantity,
-            Price = dto.Price
-        };
-
-        _context.OrderItems.Add(item);
-        await _context.SaveChangesAsync();
-
-        return CreatedAtAction(nameof(GetById), new { id = item.IdOrderItem }, ToDto(item));
+        var created = await _service.CreateAsync(dto, ct);
+        return CreatedAtAction(nameof(GetById), new { id = created.IdOrderItem }, created);
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, [FromBody] UpdateOrderItemDto dto)
-    {
-        var item = await _context.OrderItems.FindAsync(id);
-        if (item is null) return NotFound();
-
-        item.IdOrder = dto.IdOrder;
-        item.IdProduct = dto.IdProduct;
-        item.Quantity = dto.Quantity;
-        item.Price = dto.Price;
-
-        await _context.SaveChangesAsync();
-        return NoContent();
-    }
+    public async Task<IActionResult> Update(int id, [FromBody] UpdateOrderItemDto dto, CancellationToken ct = default)
+        => await _service.UpdateAsync(id, dto, ct) ? NoContent() : NotFound();
 
     [HttpPatch("{id}")]
-    public async Task<IActionResult> Patch(int id, [FromBody] PatchOrderItemDto dto)
-    {
-        var item = await _context.OrderItems.FindAsync(id);
-        if (item is null) return NotFound();
-
-        if (dto.IdOrder is not null)
-            item.IdOrder = dto.IdOrder.Value;
-
-        if (dto.IdProduct is not null)
-            item.IdProduct = dto.IdProduct.Value;
-
-        if (dto.Quantity is not null)
-            item.Quantity = dto.Quantity.Value;
-
-        if (dto.Price is not null)
-            item.Price = dto.Price.Value;
-
-        await _context.SaveChangesAsync();
-        return NoContent();
-    }
+    public async Task<IActionResult> Patch(int id, [FromBody] PatchOrderItemDto dto, CancellationToken ct = default)
+        => await _service.PatchAsync(id, dto, ct) ? NoContent() : NotFound();
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(int id)
-    {
-        var item = await _context.OrderItems.FindAsync(id);
-        if (item is null) return NotFound();
-
-        _context.OrderItems.Remove(item);
-        await _context.SaveChangesAsync();
-        return NoContent();
-    }
+    public async Task<IActionResult> Delete(int id, CancellationToken ct = default)
+        => await _service.DeleteAsync(id, ct) ? NoContent() : NotFound();
 }

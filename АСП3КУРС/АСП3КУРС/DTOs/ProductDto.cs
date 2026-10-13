@@ -13,4 +13,8 @@ public class ProductDto
     public string? Discription { get; set; }
     public string? ImageFileName { get; set; }
     public DateTime CreatedAt { get; set; }
+    public int StockQuantity { get; set; }
+
+    // Вложенные связанные данные (только для чтения).
+    public CategoryDto? Category { get; set; }
 }

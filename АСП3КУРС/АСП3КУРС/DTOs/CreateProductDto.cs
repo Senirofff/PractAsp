@@ -11,4 +11,7 @@ public class CreateProductDto
     public DateOnly? ExpirationDate { get; set; }
     public string? Discription { get; set; }
     public string? ImageFileName { get; set; }
+
+    /// <summary>Начальный остаток товара на складе.</summary>
+    public int StockQuantity { get; set; }
 }

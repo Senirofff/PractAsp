@@ -7,4 +7,7 @@ public class OrderItemDto
     public int IdProduct { get; set; }
     public int Quantity { get; set; }
     public decimal Price { get; set; }
+
+    // Вложенные связанные данные (только для чтения).
+    public ProductDto? Product { get; set; }
 }

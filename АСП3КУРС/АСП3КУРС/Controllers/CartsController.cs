@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using АСП3курс.DTOs;
-using АСП3курс.Models;
+using АСП3курс.Services;
 
 namespace АСП3курс.Controllers;
 
@@ -9,90 +8,47 @@ namespace АСП3курс.Controllers;
 [ApiController]
 public class CartsController : ControllerBase
 {
-    private readonly OnlinePharmacyP824Context _context;
+    private readonly ICartService _service;
 
-    public CartsController(OnlinePharmacyP824Context context)
+    public CartsController(ICartService service)
     {
-        _context = context;
+        _service = service;
     }
-
-    private static CartDto ToDto(Cart cart) => new()
-    {
-        IdCart = cart.IdCart,
-        IdUser = cart.IdUser,
-        CreatedDate = cart.CreatedDate
-    };
 
     [HttpGet]
     public async Task<ActionResult<IEnumerable<CartDto>>> GetAll(
         [FromQuery] int page = 1,
-        [FromQuery] int pageSize = 10)
+        [FromQuery] int pageSize = 10,
+        CancellationToken ct = default)
     {
-        var list = await _context.Carts
-            .OrderBy(c => c.IdCart)
-            .Skip((page - 1) * pageSize)
-            .Take(pageSize)
-            .Select(c => ToDto(c))
-            .ToListAsync();
-
-        return Ok(list);
+        var result = await _service.GetAllAsync(page, pageSize, ct);
+        Response.Headers["X-Total-Count"] = result.TotalCount.ToString();
+        return Ok(result.Items);
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<CartDto>> GetById(int id)
+    public async Task<ActionResult<CartDto>> GetById(int id, CancellationToken ct = default)
     {
-        var cart = await _context.Carts.FindAsync(id);
-        if (cart is null) return NotFound();
-        return Ok(ToDto(cart));
+        var dto = await _service.GetByIdAsync(id, ct);
+        return dto is null ? NotFound() : Ok(dto);
     }
 
     [HttpPost]
-    public async Task<ActionResult<CartDto>> Create([FromBody] CreateCartDto dto)
+    public async Task<ActionResult<CartDto>> Create([FromBody] CreateCartDto dto, CancellationToken ct = default)
     {
-        var cart = new Cart
-        {
-            IdUser = dto.IdUser,
-            CreatedDate = DateOnly.FromDateTime(DateTime.UtcNow)
-        };
-
-        _context.Carts.Add(cart);
-        await _context.SaveChangesAsync();
-
-        return CreatedAtAction(nameof(GetById), new { id = cart.IdCart }, ToDto(cart));
+        var created = await _service.CreateAsync(dto, ct);
+        return CreatedAtAction(nameof(GetById), new { id = created.IdCart }, created);
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, [FromBody] UpdateCartDto dto)
-    {
-        var cart = await _context.Carts.FindAsync(id);
-        if (cart is null) return NotFound();
-
-        cart.IdUser = dto.IdUser;
-        await _context.SaveChangesAsync();
-        return NoContent();
-    }
+    public async Task<IActionResult> Update(int id, [FromBody] UpdateCartDto dto, CancellationToken ct = default)
+        => await _service.UpdateAsync(id, dto, ct) ? NoContent() : NotFound();
 
     [HttpPatch("{id}")]
-    public async Task<IActionResult> Patch(int id, [FromBody] PatchCartDto dto)
-    {
-        var cart = await _context.Carts.FindAsync(id);
-        if (cart is null) return NotFound();
-
-        if (dto.IdUser is not null)
-            cart.IdUser = dto.IdUser.Value;
-
-        await _context.SaveChangesAsync();
-        return NoContent();
-    }
+    public async Task<IActionResult> Patch(int id, [FromBody] PatchCartDto dto, CancellationToken ct = default)
+        => await _service.PatchAsync(id, dto, ct) ? NoContent() : NotFound();
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(int id)
-    {
-        var cart = await _context.Carts.FindAsync(id);
-        if (cart is null) return NotFound();
-
-        _context.Carts.Remove(cart);
-        await _context.SaveChangesAsync();
-        return NoContent();
-    }
+    public async Task<IActionResult> Delete(int id, CancellationToken ct = default)
+        => await _service.DeleteAsync(id, ct) ? NoContent() : NotFound();
 }

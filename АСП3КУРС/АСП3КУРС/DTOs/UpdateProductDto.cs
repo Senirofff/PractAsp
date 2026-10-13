@@ -11,4 +11,7 @@ public class UpdateProductDto
     public DateOnly? ExpirationDate { get; set; }
     public string? Discription { get; set; }
     public string? ImageFileName { get; set; }
+
+    /// <summary>Остаток товара на складе.</summary>
+    public int StockQuantity { get; set; }
 }

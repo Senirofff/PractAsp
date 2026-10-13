@@ -4,7 +4,6 @@ public class UserDto
 {
     public int IdUser { get; set; }
     public string Login { get; set; } = null!;
-    public string PasswordHash { get; set; } = null!;
     public int IdRole { get; set; }
     public string LastName { get; set; } = null!;
     public string FirstName { get; set; } = null!;
@@ -13,4 +12,7 @@ public class UserDto
     public string? Email { get; set; }
     public bool IsActive { get; set; }
     public int DiscountPercent { get; set; }
+
+    // Вложенные связанные данные (только для чтения).
+    public RoleDto? Role { get; set; }
 }

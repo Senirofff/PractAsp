@@ -11,4 +11,5 @@ public class PatchProductDto
     public DateOnly? ExpirationDate { get; set; }
     public string? Discription { get; set; }
     public string? ImageFileName { get; set; }
+    public int? StockQuantity { get; set; }
 }

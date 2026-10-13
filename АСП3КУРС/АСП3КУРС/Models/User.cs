@@ -32,4 +32,6 @@ public partial class User
     public virtual Role IdRoleNavigation { get; set; } = null!;
 
     public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
+
+    public virtual ICollection<Reservation> Reservations { get; set; } = new List<Reservation>();
 }

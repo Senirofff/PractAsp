@@ -27,9 +27,14 @@ public partial class Product
 
     public DateTime CreatedAt { get; set; }
 
+    /// <summary>Остаток товара на складе. Уменьшается при резервировании и возвращается при отмене.</summary>
+    public int StockQuantity { get; set; }
+
     public virtual ICollection<CartItem> CartItems { get; set; } = new List<CartItem>();
 
     public virtual Category IdCategoryNavigation { get; set; } = null!;
 
     public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
+
+    public virtual ICollection<Reservation> Reservations { get; set; } = new List<Reservation>();
 }

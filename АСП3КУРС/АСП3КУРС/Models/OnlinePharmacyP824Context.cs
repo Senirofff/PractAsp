@@ -29,6 +29,8 @@ public partial class OnlinePharmacyP824Context : DbContext
 
     public virtual DbSet<Role> Roles { get; set; }
 
+    public virtual DbSet<Reservation> Reservations { get; set; }
+
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -161,6 +163,9 @@ public partial class OnlinePharmacyP824Context : DbContext
                 .HasColumnType("decimal(10, 2)")
                 .HasColumnName("price");
             entity.Property(e => e.RequiresPrescription).HasColumnName("requires_prescription");
+            entity.Property(e => e.StockQuantity)
+                .HasDefaultValue(0)
+                .HasColumnName("stock_quantity");
 
             entity.HasOne(d => d.IdCategoryNavigation).WithMany(p => p.Products)
                 .HasForeignKey(d => d.IdCategory)
@@ -177,6 +182,38 @@ public partial class OnlinePharmacyP824Context : DbContext
                 .HasMaxLength(40)
                 .IsUnicode(false)
                 .HasColumnName("title");
+        });
+
+        modelBuilder.Entity<Reservation>(entity =>
+        {
+            entity.HasKey(e => e.IdReservation).HasName("PK_Reservations");
+
+            entity.Property(e => e.IdReservation).HasColumnName("id_reservation");
+            entity.Property(e => e.IdUser).HasColumnName("id_user");
+            entity.Property(e => e.IdProduct).HasColumnName("id_product");
+            entity.Property(e => e.Quantity).HasColumnName("quantity");
+            entity.Property(e => e.Status)
+                .HasMaxLength(20)
+                .IsUnicode(false)
+                .HasDefaultValue(ReservationStatuses.Active)
+                .HasColumnName("status");
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime")
+                .HasColumnName("created_at");
+            entity.Property(e => e.ReleasedAt)
+                .HasColumnType("datetime")
+                .HasColumnName("released_at");
+
+            entity.HasOne(d => d.IdUserNavigation).WithMany(p => p.Reservations)
+                .HasForeignKey(d => d.IdUser)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Reservations_Users");
+
+            entity.HasOne(d => d.IdProductNavigation).WithMany(p => p.Reservations)
+                .HasForeignKey(d => d.IdProduct)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Reservations_Products");
         });
 
         modelBuilder.Entity<User>(entity =>
