@@ -173,6 +173,7 @@ C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3курс
 C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3курс\bin\Debug\net9.0\АСП3курс.runtimeconfig.json
 C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3курс\bin\Debug\net9.0\АСП3курс.dll
 C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3курс\bin\Debug\net9.0\АСП3курс.pdb
+C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3курс\bin\Debug\net9.0\AutoMapper.dll
 C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3курс\bin\Debug\net9.0\Azure.Core.dll
 C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3курс\bin\Debug\net9.0\Azure.Identity.dll
 C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3курс\bin\Debug\net9.0\Humanizer.dll
@@ -223,6 +224,7 @@ C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3курс
 C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3курс\bin\Debug\net9.0\System.Composition.Runtime.dll
 C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3курс\bin\Debug\net9.0\System.Composition.TypedParts.dll
 C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3курс\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3курс\bin\Debug\net9.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3курс\bin\Debug\net9.0\System.Drawing.Common.dll
 C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3курс\bin\Debug\net9.0\System.Formats.Asn1.dll
 C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3курс\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
@@ -332,5 +334,5 @@ C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3курс
 C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3курс\obj\Debug\net9.0\АСП3курс.pdb
 C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3курс\obj\Debug\net9.0\АСП3курс.genruntimeconfig.cache
 C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3курс\obj\Debug\net9.0\ref\АСП3курс.dll
-C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3КУРС\bin\Debug\net9.0\AutoMapper.dll
-C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3КУРС\bin\Debug\net9.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3КУРС\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3курс\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

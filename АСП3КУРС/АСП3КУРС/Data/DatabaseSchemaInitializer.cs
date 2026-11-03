@@ -3,11 +3,6 @@ using АСП3курс.Models;
 
 namespace АСП3курс.Data;
 
-/// <summary>
-/// Приводит схему существующей базы данных в соответствие с моделью:
-/// добавляет колонку остатка товара и таблицу резервирований.
-/// Операции идемпотентны и выполняются только если объектов ещё нет.
-/// </summary>
 public static class DatabaseSchemaInitializer
 {
     public const string Script = @"
@@ -31,11 +26,19 @@ BEGIN
         CONSTRAINT [FK_Reservations_Users] FOREIGN KEY ([id_user]) REFERENCES [dbo].[Users] ([id_user]),
         CONSTRAINT [FK_Reservations_Products] FOREIGN KEY ([id_product]) REFERENCES [dbo].[Products] ([id_product])
     );
-END;";
+END;
+
+-- Roles are inserted under a table lock to make concurrent startup idempotent.
+INSERT INTO dbo.Roles (title)
+SELECT v.title FROM (VALUES ('Admin'), ('User')) AS v(title)
+WHERE NOT EXISTS (
+    SELECT 1 FROM dbo.Roles WITH (UPDLOCK, HOLDLOCK) WHERE title = v.title
+);
+";
 
     public static async Task EnsureUpdatedAsync(OnlinePharmacyP824Context context, ILogger logger)
     {
         await context.Database.ExecuteSqlRawAsync(Script);
-        logger.LogInformation("Схема БД проверена: колонка stock_quantity и таблица Reservations готовы к работе.");
+        logger.LogInformation("Схема БД проверена: остатки, резервирования и роли Admin/User готовы к работе.");
     }
 }

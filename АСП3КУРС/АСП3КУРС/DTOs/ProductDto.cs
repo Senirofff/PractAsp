@@ -15,6 +15,5 @@ public class ProductDto
     public DateTime CreatedAt { get; set; }
     public int StockQuantity { get; set; }
 
-    // Вложенные связанные данные (только для чтения).
     public CategoryDto? Category { get; set; }
 }

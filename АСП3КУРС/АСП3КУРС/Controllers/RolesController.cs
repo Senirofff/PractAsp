@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authorization;
+using АСП3курс.Security;
 using Microsoft.AspNetCore.Mvc;
 using АСП3курс.DTOs;
 using АСП3курс.Services;
@@ -6,6 +8,7 @@ namespace АСП3курс.Controllers;
 
 [Route("api/roles")]
 [ApiController]
+[Authorize(Policy = Access.Admin)]
 public class RolesController : ControllerBase
 {
     private readonly IRoleService _service;

@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authorization;
+using АСП3курс.Security;
 using Microsoft.AspNetCore.Mvc;
 using АСП3курс.DTOs;
 using АСП3курс.Services;
@@ -6,6 +8,7 @@ namespace АСП3курс.Controllers;
 
 [Route("api/products")]
 [ApiController]
+[Authorize(Policy = Access.Admin)]
 public class ProductsController : ControllerBase
 {
     private readonly IProductService _service;
@@ -15,6 +18,7 @@ public class ProductsController : ControllerBase
         _service = service;
     }
 
+    [AllowAnonymous]
     [HttpGet]
     public async Task<ActionResult<IEnumerable<ProductDto>>> GetAll(
         [FromQuery] int page = 1,
@@ -26,6 +30,7 @@ public class ProductsController : ControllerBase
         return Ok(result.Items);
     }
 
+    [AllowAnonymous]
     [HttpGet("{id}")]
     public async Task<ActionResult<ProductDto>> GetById(int id, CancellationToken ct = default)
     {

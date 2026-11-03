@@ -4,10 +4,6 @@ using АСП3курс.Services.Exceptions;
 
 namespace АСП3курс.Middleware;
 
-/// <summary>
-/// Преобразует исключения слоя сервисов в понятные HTTP-ответы (ProblemDetails),
-/// чтобы нарушение бизнес-правила не превращалось в 500.
-/// </summary>
 public class ExceptionHandlingMiddleware
 {
     private readonly RequestDelegate _next;

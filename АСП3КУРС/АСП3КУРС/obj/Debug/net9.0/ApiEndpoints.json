@@ -1,5 +1,57 @@
 [
   {
+    "ContainingType": "\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.DTOs.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.DTOs.AccessTokenDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.Controllers.AuthController",
+    "Method": "Register",
+    "RelativePath": "api/auth/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.DTOs.RegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.DTOs.AccessTokenDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.Controllers.CartItemsController",
     "Method": "GetAll",
     "RelativePath": "api/cartitems",
@@ -846,6 +898,173 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.Controllers.ReservationsController",
+    "Method": "GetAll",
+    "RelativePath": "api/reservations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.DTOs.ReservationDto, \u0410\u0421\u041F3\u043A\u0443\u0440\u0441, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.Controllers.ReservationsController",
+    "Method": "Reserve",
+    "RelativePath": "api/reservations",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.DTOs.CreateReservationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.DTOs.ReservationDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.Controllers.ReservationsController",
+    "Method": "GetById",
+    "RelativePath": "api/reservations/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.DTOs.ReservationDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.Controllers.ReservationsController",
+    "Method": "Update",
+    "RelativePath": "api/reservations/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.DTOs.UpdateReservationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.Controllers.ReservationsController",
+    "Method": "Patch",
+    "RelativePath": "api/reservations/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.DTOs.PatchReservationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.Controllers.ReservationsController",
+    "Method": "Delete",
+    "RelativePath": "api/reservations/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.Controllers.ReservationsController",
+    "Method": "Release",
+    "RelativePath": "api/reservations/{id}/release",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.DTOs.ReservationDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.Controllers.RolesController",
     "Method": "GetAll",
     "RelativePath": "api/roles",
@@ -1122,6 +1341,27 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.Controllers.UsersController",
+    "Method": "UpdateProfile",
+    "RelativePath": "api/users/{id}/profile",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "\u0410\u0421\u041F3\u043A\u0443\u0440\u0441.DTOs.UpdateProfileDto",
         "IsRequired": true
       }
     ],

@@ -4,15 +4,10 @@ using АСП3курс.Models;
 
 namespace АСП3курс.Mapping;
 
-/// <summary>
-/// Единая конфигурация AutoMapper. Ручных методов маппинга в проекте нет:
-/// преобразование сущностей в DTO и обратно описано только здесь.
-/// </summary>
 public class MappingProfile : Profile
 {
     public MappingProfile()
     {
-        // ---------------- Category ----------------
         CreateMap<Category, CategoryDto>()
             .ForMember(d => d.ProductCount, o => o.MapFrom(s => s.Products.Count));
         CreateMap<CreateCategoryDto, Category>();
@@ -20,7 +15,6 @@ public class MappingProfile : Profile
         CreateMap<PatchCategoryDto, Category>()
             .IgnoreNullMembers();
 
-        // ---------------- Product ----------------
         CreateMap<Product, ProductDto>()
             .ForMember(d => d.Category, o => o.MapFrom(s => s.IdCategoryNavigation));
         CreateMap<CreateProductDto, Product>();
@@ -28,22 +22,20 @@ public class MappingProfile : Profile
         CreateMap<PatchProductDto, Product>()
             .IgnoreNullMembers();
 
-        // ---------------- User ----------------
         CreateMap<User, UserDto>()
             .ForMember(d => d.Role, o => o.MapFrom(s => s.IdRoleNavigation));
+        CreateMap<UpdateProfileDto, User>();
         CreateMap<CreateUserDto, User>();
         CreateMap<UpdateUserDto, User>();
         CreateMap<PatchUserDto, User>()
             .IgnoreNullMembers();
 
-        // ---------------- Role ----------------
         CreateMap<Role, RoleDto>();
         CreateMap<CreateRoleDto, Role>();
         CreateMap<UpdateRoleDto, Role>();
         CreateMap<PatchRoleDto, Role>()
             .IgnoreNullMembers();
 
-        // ---------------- Cart ----------------
         CreateMap<Cart, CartDto>()
             .ForMember(d => d.User, o => o.MapFrom(s => s.IdUserNavigation))
             .ForMember(d => d.Items, o => o.MapFrom(s => s.CartItems));
@@ -52,7 +44,6 @@ public class MappingProfile : Profile
         CreateMap<PatchCartDto, Cart>()
             .IgnoreNullMembers();
 
-        // ---------------- CartItem ----------------
         CreateMap<CartItem, CartItemDto>()
             .ForMember(d => d.Product, o => o.MapFrom(s => s.IdProductNavigation));
         CreateMap<CreateCartItemDto, CartItem>();
@@ -60,7 +51,6 @@ public class MappingProfile : Profile
         CreateMap<PatchCartItemDto, CartItem>()
             .IgnoreNullMembers();
 
-        // ---------------- Order ----------------
         CreateMap<Order, OrderDto>()
             .ForMember(d => d.User, o => o.MapFrom(s => s.IdUserNavigation))
             .ForMember(d => d.Items, o => o.MapFrom(s => s.OrderItems));
@@ -69,7 +59,6 @@ public class MappingProfile : Profile
         CreateMap<PatchOrderDto, Order>()
             .IgnoreNullMembers();
 
-        // ---------------- OrderItem ----------------
         CreateMap<OrderItem, OrderItemDto>()
             .ForMember(d => d.Product, o => o.MapFrom(s => s.IdProductNavigation));
         CreateMap<CreateOrderItemDto, OrderItem>();
@@ -77,7 +66,6 @@ public class MappingProfile : Profile
         CreateMap<PatchOrderItemDto, OrderItem>()
             .IgnoreNullMembers();
 
-        // ---------------- Reservation ----------------
         CreateMap<Reservation, ReservationDto>()
             .ForMember(d => d.User, o => o.MapFrom(s => s.IdUserNavigation))
             .ForMember(d => d.Product, o => o.MapFrom(s => s.IdProductNavigation));

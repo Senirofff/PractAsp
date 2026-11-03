@@ -26,3 +26,10 @@ BEGIN
     );
 END;
 GO
+
+-- Roles are inserted under a table lock to make concurrent startup idempotent.
+INSERT INTO dbo.Roles (title)
+SELECT v.title FROM (VALUES ('Admin'), ('User')) AS v(title)
+WHERE NOT EXISTS (
+    SELECT 1 FROM dbo.Roles WITH (UPDLOCK, HOLDLOCK) WHERE title = v.title
+);

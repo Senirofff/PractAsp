@@ -1,9 +1,12 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace АСП3курс.DTOs;
 
 public class PatchUserDto
 {
     public string? Login { get; set; }
-    public string? PasswordHash { get; set; }
+    [StringLength(128, MinimumLength = 8)]
+    public string? Password { get; set; }
     public int? IdRole { get; set; }
     public string? LastName { get; set; }
     public string? FirstName { get; set; }

@@ -1,6 +1,5 @@
 namespace АСП3курс.Services;
 
-/// <summary>Нормализация параметров пагинации, общая для всех сервисов.</summary>
 internal static class Paging
 {
     public static (int Page, int PageSize) Normalize(int page, int pageSize)

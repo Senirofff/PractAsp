@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +15,7 @@ public interface IUserService
     Task<UserDto> CreateAsync(CreateUserDto dto, CancellationToken ct = default);
     Task<bool> UpdateAsync(int id, UpdateUserDto dto, CancellationToken ct = default);
     Task<bool> PatchAsync(int id, PatchUserDto dto, CancellationToken ct = default);
+    Task<bool> UpdateProfileAsync(int id, UpdateProfileDto dto, CancellationToken ct = default);
     Task<bool> DeleteAsync(int id, CancellationToken ct = default);
 }
 
@@ -22,10 +24,13 @@ public class UserService : IUserService
     private readonly IRepository<User> _repository;
     private readonly IMapper _mapper;
 
-    public UserService(IRepository<User> repository, IMapper mapper)
+    private readonly IPasswordHasher<User> _hasher;
+
+    public UserService(IRepository<User> repository, IMapper mapper, IPasswordHasher<User> hasher)
     {
         _repository = repository;
         _mapper = mapper;
+        _hasher = hasher;
     }
 
     public async Task<PagedResult<UserDto>> GetAllAsync(int page, int pageSize, CancellationToken ct = default)
@@ -53,6 +58,7 @@ public class UserService : IUserService
     public async Task<UserDto> CreateAsync(CreateUserDto dto, CancellationToken ct = default)
     {
         var entity = _mapper.Map<User>(dto);
+        entity.PasswordHash = _hasher.HashPassword(entity, dto.Password);
         await _repository.AddAsync(entity, ct);
         await _repository.SaveChangesAsync(ct);
         return (await GetByIdAsync(entity.IdUser, ct))!;
@@ -67,6 +73,8 @@ public class UserService : IUserService
         }
 
         _mapper.Map(dto, entity);
+        if (dto.Password is not null)
+            entity.PasswordHash = _hasher.HashPassword(entity, dto.Password);
         await _repository.SaveChangesAsync(ct);
         return true;
     }
@@ -78,6 +86,19 @@ public class UserService : IUserService
         {
             return false;
         }
+
+        _mapper.Map(dto, entity);
+        if (dto.Password is not null)
+            entity.PasswordHash = _hasher.HashPassword(entity, dto.Password);
+        await _repository.SaveChangesAsync(ct);
+        return true;
+    }
+
+    public async Task<bool> UpdateProfileAsync(int id, UpdateProfileDto dto, CancellationToken ct = default)
+    {
+        var entity = await _repository.GetByIdAsync(id, ct);
+        if (entity is null)
+            return false;
 
         _mapper.Map(dto, entity);
         await _repository.SaveChangesAsync(ct);

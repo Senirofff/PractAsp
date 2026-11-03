@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authorization;
+using АСП3курс.Security;
 using Microsoft.AspNetCore.Mvc;
 using АСП3курс.DTOs;
 using АСП3курс.Services;
@@ -6,6 +8,7 @@ namespace АСП3курс.Controllers;
 
 [Route("api/categories")]
 [ApiController]
+[Authorize(Policy = Access.Admin)]
 public class CategoriesController : ControllerBase
 {
     private readonly ICategoryService _service;
@@ -15,6 +18,7 @@ public class CategoriesController : ControllerBase
         _service = service;
     }
 
+    [AllowAnonymous]
     [HttpGet]
     public async Task<ActionResult<IEnumerable<CategoryDto>>> GetAll(
         [FromQuery] int page = 1,
@@ -26,6 +30,7 @@ public class CategoriesController : ControllerBase
         return Ok(result.Items);
     }
 
+    [AllowAnonymous]
     [HttpGet("{id}")]
     public async Task<ActionResult<CategoryDto>> GetById(int id, CancellationToken ct = default)
     {

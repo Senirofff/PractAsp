@@ -13,10 +13,8 @@ public interface IReservationService
     Task<PagedResult<ReservationDto>> GetAllAsync(int page, int pageSize, CancellationToken ct = default);
     Task<ReservationDto?> GetByIdAsync(int id, CancellationToken ct = default);
 
-    /// <summary>Бизнес-операция: зарезервировать товар (уменьшить остаток) и создать запись о событии.</summary>
     Task<ReservationDto> ReserveAsync(CreateReservationDto dto, CancellationToken ct = default);
 
-    /// <summary>Обратная операция: вернуть товар на склад и закрыть активную запись о событии.</summary>
     Task<ReservationDto> ReleaseAsync(int id, CancellationToken ct = default);
 
     Task<bool> UpdateAsync(int id, UpdateReservationDto dto, CancellationToken ct = default);
@@ -69,7 +67,7 @@ public class ReservationService : IReservationService
     {
         if (dto.Quantity <= 0)
         {
-            throw new BusinessRuleException("Количество для резервирования должно быть больше нуля.");
+            throw new ArgumentException("Количество для резервирования должно быть больше нуля.");
         }
 
         var user = await _users.GetByIdAsync(dto.IdUser, ct)

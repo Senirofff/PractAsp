@@ -6,6 +6,7 @@ using АСП3курс.Middleware;
 using АСП3курс.Models;
 using АСП3курс.Repositories;
 using АСП3курс.Services;
+using АСП3курс.Security;
 
 namespace АСП3курс
 {
@@ -17,17 +18,11 @@ namespace АСП3курс
 
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.AddApiSecurity();
 
-            // DbContext регистрируется как Scoped: один экземпляр на HTTP-запрос.
-            // Благодаря этому все репозитории и сервисы запроса работают с одним
-            // контекстом, а значит один SaveChangesAsync сохраняет изменения сразу
-            // нескольких сущностей (без UnitOfWork и явных транзакций).
             builder.Services.AddDbContext<OnlinePharmacyP824Context>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-            // AutoMapper — Singleton: конфигурация маппинга неизменяема и потокобезопасна,
-            // поэтому её выгодно создать один раз на всё приложение.
             builder.Services.AddSingleton<IMapper>(sp =>
             {
                 var configuration = new MapperConfiguration(
@@ -37,11 +32,8 @@ namespace АСП3курс
                 return configuration.CreateMapper();
             });
 
-            // Репозитории — Scoped: живут в рамках запроса и используют общий DbContext.
             builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
-            // Сервисы — Scoped: содержат бизнес-логику и обращаются к репозиториям
-            // и AutoMapper; на каждый запрос создаётся свой экземпляр.
             builder.Services.AddScoped<ICategoryService, CategoryService>();
             builder.Services.AddScoped<IProductService, ProductService>();
             builder.Services.AddScoped<ICartService, CartService>();
@@ -54,8 +46,6 @@ namespace АСП3курс
 
             var app = builder.Build();
 
-            // Идемпотентно приводит схему существующей БД в соответствие с моделью
-            // (колонка Products.stock_quantity и таблица Reservations).
             using (var scope = app.Services.CreateScope())
             {
                 var context = scope.ServiceProvider.GetRequiredService<OnlinePharmacyP824Context>();
@@ -78,7 +68,11 @@ namespace АСП3курс
             }
 
             app.UseMiddleware<ExceptionHandlingMiddleware>();
-            app.UseHttpsRedirection();
+            app.UseRouting();
+            app.UseCors();
+            if (!app.Environment.IsDevelopment()) app.UseHttpsRedirection();
+            app.UseRateLimiter();
+            app.UseAuthentication();
             app.UseAuthorization();
             app.MapControllers();
 

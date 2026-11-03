@@ -13,6 +13,5 @@ public class UserDto
     public bool IsActive { get; set; }
     public int DiscountPercent { get; set; }
 
-    // Вложенные связанные данные (только для чтения).
     public RoleDto? Role { get; set; }
 }

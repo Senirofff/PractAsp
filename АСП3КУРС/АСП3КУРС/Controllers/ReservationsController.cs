@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authorization;
+using АСП3курс.Security;
 using Microsoft.AspNetCore.Mvc;
 using АСП3курс.DTOs;
 using АСП3курс.Services;
@@ -6,6 +8,7 @@ namespace АСП3курс.Controllers;
 
 [Route("api/reservations")]
 [ApiController]
+[Authorize(Policy = Access.Admin)]
 public class ReservationsController : ControllerBase
 {
     private readonly IReservationService _service;
@@ -32,11 +35,7 @@ public class ReservationsController : ControllerBase
         var dto = await _service.GetByIdAsync(id, ct);
         return dto is null ? NotFound() : Ok(dto);
     }
-
-    /// <summary>
-    /// Создание резервирования: уменьшает остаток товара и создаёт запись о событии.
-    /// При нехватке товара возвращает 409, при отсутствии пользователя/товара — 404.
-    /// </summary>
+    
     [HttpPost]
     public async Task<ActionResult<ReservationDto>> Reserve([FromBody] CreateReservationDto dto, CancellationToken ct = default)
     {
