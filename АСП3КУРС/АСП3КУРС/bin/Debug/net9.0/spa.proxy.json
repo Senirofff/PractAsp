@@ -1,0 +1,10 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "http://localhost:5173",
+"RedirectUrl": "",
+"LaunchCommand": "npm run dev",
+"WorkingDirectory": "C:\\Users\\Denis\\Desktop\\ycheba\\АSP(Осипян)\\АСП3КУРС\\АСП3курс\\..\\frontend\\",
+"MaxTimeoutInSeconds": "120",
+"KeepRunning": "false"
+}
+}

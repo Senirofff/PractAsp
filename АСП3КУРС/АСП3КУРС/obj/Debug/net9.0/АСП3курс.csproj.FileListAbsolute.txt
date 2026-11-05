@@ -335,4 +335,7 @@ C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3курс
 C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3курс\obj\Debug\net9.0\АСП3курс.genruntimeconfig.cache
 C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3курс\obj\Debug\net9.0\ref\АСП3курс.dll
 C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3КУРС\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3КУРС\bin\Debug\net9.0\spa.proxy.json
+C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3КУРС\bin\Debug\net9.0\Microsoft.AspNetCore.SpaProxy.dll
+C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3КУРС\obj\Debug\net9.0\spa.proxy.json
 C:\Users\Denis\Desktop\ycheba\АSP(Осипян)\АСП3КУРС\АСП3курс\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
